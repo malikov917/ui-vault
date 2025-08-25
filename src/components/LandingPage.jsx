@@ -9,7 +9,7 @@ const UIVaultLanding = () => {
   const [copiedCode, setCopiedCode] = useState('');
 
   const handleEarlyAccess = async (e) => {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     if (!email) return;
 
     setIsSubmitting(true);
@@ -71,20 +71,20 @@ bg-white/10 backdrop-blur-md border border-white/20
 Output clean, production-ready React JSX.\`;`;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-950 text-white">
       {/* Navigation */}
-      <nav className="border-b border-gray-800 backdrop-blur-md bg-gray-900/80 sticky top-0 z-50">
+      <nav className="border-b border-gray-800 backdrop-blur-md bg-gray-950/80 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-lg flex items-center justify-center">
                 <Layout className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold">UIVault</span>
+              <span className="text-xl font-bold font-mono">UIVault</span>
             </div>
             <button 
               onClick={() => document.getElementById('early-access').scrollIntoView()}
-              className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
+              className="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-lg transition-colors font-mono text-sm"
             >
               Request Access
             </button>
@@ -95,51 +95,123 @@ Output clean, production-ready React JSX.\`;`;
       {/* Hero Section */}
       <section className="pt-20 pb-32 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-4 py-2 mb-8">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-300">Vision Stage: Seeking Early Adopters</span>
+          <div className="inline-flex items-center space-x-2 bg-emerald-600/20 border border-emerald-500/30 rounded-full px-4 py-2 mb-8">
+            <Sparkles className="w-4 h-4 text-emerald-400" />
+            <span className="text-sm text-emerald-300 font-mono">Vision Stage: Seeking Early Adopters 🚀</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-emerald-100 to-cyan-200 bg-clip-text text-transparent leading-tight">
             Stop Gambling with
-            <br />AI-Generated UIs
+            <br />AI-Generated UIs 🎲
           </h1>
           
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             Preview, validate, and implement proven UI designs through our MCP-powered platform. 
-            No more expensive trial-and-error with unpredictable AI outputs.
+            No more expensive trial-and-error with unpredictable AI outputs. ⚡
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button 
               onClick={() => document.getElementById('early-access').scrollIntoView()}
-              className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105 flex items-center space-x-2"
+              className="bg-emerald-600 hover:bg-emerald-700 px-8 py-3 rounded-lg font-mono font-medium transition-all transform hover:scale-105 flex items-center space-x-2"
             >
               <span>Get Early Access</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button 
               onClick={() => document.getElementById('demo').scrollIntoView()}
-              className="border border-gray-600 hover:border-gray-500 px-8 py-3 rounded-lg font-medium transition-colors"
+              className="border border-gray-600 hover:border-gray-500 px-8 py-3 rounded-lg font-mono font-medium transition-colors"
             >
-              See How It Works
+              See How It Works 👀
             </button>
           </div>
 
-          {/* Hero Visual */}
-          <div className="relative">
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-4xl mx-auto">
-              <div className="text-left">
-                <div className="flex items-center space-x-2 mb-4">
-                  <Terminal className="w-5 h-5 text-green-400" />
-                  <span className="text-green-400 font-mono text-sm">ai-assistant</span>
+          {/* Improved Hero Visual */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-emerald-500/25 transform -rotate-12">
+              <Terminal className="w-10 h-10 text-white" />
+            </div>
+            
+            <div className="bg-gray-900 rounded-2xl shadow-2xl shadow-black/40 p-8 border border-gray-800">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="ml-4 text-gray-400 text-sm font-mono">~ AI Assistant + MCP Server</span>
+              </div>
+              
+              <div className="text-left font-mono text-sm space-y-3">
+                <div className="flex items-start space-x-3">
+                  <span className="text-emerald-400 select-none">$</span>
+                  <div className="flex-1">
+                    <span className="text-cyan-300">you</span>
+                    <span className="text-gray-300">: </span>
+                    <span className="text-white">"Build a glassmorphism dashboard using UIVault components"</span>
+                  </div>
                 </div>
-                <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
-                  <span className="text-blue-300">You:</span> <span className="text-white">"Build a glassmorphism dashboard using UIVault"</span>
-                  <br />
-                  <span className="text-green-300">Assistant:</span> <span className="text-gray-300">✨ Found UIVault pattern: Glassmorphism Dashboard</span>
-                  <br />
-                  <span className="text-purple-300">UIVault:</span> <span className="text-gray-300">Delivering optimized prompt + preview...</span>
+                
+                <div className="flex items-start space-x-3">
+                  <span className="text-purple-400 select-none">🤖</span>
+                  <div className="flex-1">
+                    <span className="text-purple-300">assistant</span>
+                    <span className="text-gray-300">: </span>
+                    <span className="text-gray-200">Connecting to UIVault MCP server...</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3 pl-6">
+                  <span className="text-emerald-400 select-none">✨</span>
+                  <div className="flex-1 bg-gray-800/50 p-3 rounded border border-gray-700">
+                    <span className="text-emerald-300">Found pattern: </span>
+                    <span className="text-white">glassmorphism_dashboard_v2</span>
+                    <br />
+                    <span className="text-cyan-300">Components: </span>
+                    <span className="text-gray-300">sidebar, stats-cards, chart-container</span>
+                    <br />
+                    <span className="text-yellow-300">Optimized prompt: </span>
+                    <span className="text-gray-300">loaded & validated ✅</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <span className="text-purple-400 select-none">🤖</span>
+                  <div className="flex-1">
+                    <span className="text-purple-300">assistant</span>
+                    <span className="text-gray-300">: </span>
+                    <span className="text-gray-200">Here's your production-ready glassmorphism dashboard:</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-800/50 border border-gray-700 rounded p-4 ml-6">
+                  <pre className="text-xs text-gray-300 overflow-x-auto">
+{`<div className="min-h-screen bg-gray-900">
+  <div className="flex">
+    {/* Sidebar */}
+    <div className="w-64 bg-white/10 backdrop-blur-md 
+                    border-r border-white/20">
+      {/* Navigation items */}
+    </div>
+    
+    {/* Main Content */}
+    <div className="flex-1 p-8">
+      {/* Stats Cards */}
+      <div className="grid grid-cols-4 gap-6 mb-8">
+        <div className="bg-white/10 backdrop-blur-md 
+                        border border-white/20 rounded-xl p-6">
+          <h3 className="text-white/80">Revenue</h3>
+          <p className="text-2xl font-bold text-white">$24.5k</p>
+        </div>
+        {/* More cards... */}
+      </div>
+    </div>
+  </div>
+</div>`}
+                  </pre>
+                </div>
+                
+                <div className="flex items-center space-x-2 text-emerald-400">
+                  <Check className="w-4 h-4" />
+                  <span>Generated in 3.2s • Token cost: ~50% less • Quality: Guaranteed 🎯</span>
                 </div>
               </div>
             </div>
@@ -148,29 +220,30 @@ Output clean, production-ready React JSX.\`;`;
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 px-4 bg-gray-800/30">
+      <section className="py-20 px-4 bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">The Developer Frustration</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 font-mono">The Developer Frustration 😤</h2>
+          <p className="text-center text-gray-400 mb-16 font-mono text-sm">// We've all been there...</p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-gray-900/50 rounded-xl border border-gray-800">
               <div className="w-16 h-16 bg-red-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-red-400" />
+                <span className="text-3xl">💸</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Expensive Guesswork</h3>
+              <h3 className="text-xl font-semibold mb-3 font-mono">Expensive Guesswork</h3>
               <p className="text-gray-300">Burning through AI tokens with unpredictable results. No way to preview before generation.</p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-gray-900/50 rounded-xl border border-gray-800">
               <div className="w-16 h-16 bg-orange-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Eye className="w-8 h-8 text-orange-400" />
+                <span className="text-3xl">🎰</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">No Preview Control</h3>
+              <h3 className="text-xl font-semibold mb-3 font-mono">No Preview Control</h3>
               <p className="text-gray-300">Can't see what you're getting until it's generated. Trial and error costs time and money.</p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-gray-900/50 rounded-xl border border-gray-800">
               <div className="w-16 h-16 bg-yellow-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Code className="w-8 h-8 text-yellow-400" />
+                <span className="text-3xl">🐛</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Inconsistent Quality</h3>
+              <h3 className="text-xl font-semibold mb-3 font-mono">Inconsistent Quality</h3>
               <p className="text-gray-300">Same prompt, different results. No standardization or reliability in AI-generated UIs.</p>
             </div>
           </div>
@@ -181,9 +254,9 @@ Output clean, production-ready React JSX.\`;`;
       <section id="demo" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">The UIVault Solution</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A curated design system with live previews, optimized prompts, and MCP server integration
+            <h2 className="text-4xl font-bold mb-6 font-mono">The UIVault Solution 🛡️</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono text-sm">
+              <span className="text-emerald-400">//</span> A curated design system with live previews, optimized prompts, and MCP server integration
             </p>
           </div>
 
@@ -191,32 +264,26 @@ Output clean, production-ready React JSX.\`;`;
             {/* Features */}
             <div>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Eye className="w-6 h-6 text-blue-400" />
-                  </div>
+                <div className="flex items-start space-x-4 bg-gray-900/50 p-4 rounded-xl border border-gray-800">
+                  <div className="text-3xl">👁️</div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Live Interactive Previews</h3>
+                    <h3 className="text-xl font-semibold mb-2 font-mono text-emerald-300">Live Interactive Previews</h3>
                     <p className="text-gray-300">See exactly what you're getting before generation. No surprises, no wasted tokens.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Server className="w-6 h-6 text-purple-400" />
-                  </div>
+                <div className="flex items-start space-x-4 bg-gray-900/50 p-4 rounded-xl border border-gray-800">
+                  <div className="text-3xl">🔌</div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">MCP Server Integration</h3>
-                    <p className="text-gray-300">Simple commands like "build using Glassmorphism Dashboard" with guaranteed results.</p>
+                    <h3 className="text-xl font-semibold mb-2 font-mono text-cyan-300">MCP Server Integration</h3>
+                    <p className="text-gray-300">Simple commands like <code className="bg-gray-800 px-2 py-1 rounded font-mono text-sm">"build using Glassmorphism Dashboard"</code> with guaranteed results.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Code className="w-6 h-6 text-green-400" />
-                  </div>
+                <div className="flex items-start space-x-4 bg-gray-900/50 p-4 rounded-xl border border-gray-800">
+                  <div className="text-3xl">⚡</div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Tailwind-First Architecture</h3>
+                    <h3 className="text-xl font-semibold mb-2 font-mono text-yellow-300">Tailwind-First Architecture</h3>
                     <p className="text-gray-300">Production-ready components with utility classes. Copy-paste and customize instantly.</p>
                   </div>
                 </div>
@@ -224,23 +291,31 @@ Output clean, production-ready React JSX.\`;`;
             </div>
 
             {/* MCP Integration Example */}
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
-              <div className="flex items-center justify-between p-4 border-b border-gray-700">
-                <div className="flex items-center space-x-2">
-                  <Terminal className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm text-gray-300">MCP Integration</span>
-                </div>
-                <button 
-                  onClick={() => copyCode(mcpIntegrationCode, 'mcp')}
-                  className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors"
-                >
-                  {copiedCode === 'mcp' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                  <span className="text-sm">{copiedCode === 'mcp' ? 'Copied!' : 'Copy'}</span>
-                </button>
+            <div className="relative">
+              <div className="absolute -top-4 -right-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 transform rotate-12">
+                <Server className="w-8 h-8 text-white" />
               </div>
-              <pre className="p-4 text-sm text-gray-300 overflow-x-auto">
-                <code>{mcpIntegrationCode}</code>
-              </pre>
+              
+              <div className="bg-gray-900 rounded-2xl shadow-2xl shadow-black/40 border border-gray-800 overflow-hidden">
+                <div className="flex items-center justify-between p-4 border-b border-gray-700 bg-gray-900/50">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span className="ml-4 text-sm text-gray-300 font-mono">mcp-config.json</span>
+                  </div>
+                  <button 
+                    onClick={() => copyCode(mcpIntegrationCode, 'mcp')}
+                    className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors"
+                  >
+                    {copiedCode === 'mcp' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                    <span className="text-sm font-mono">{copiedCode === 'mcp' ? 'copied!' : 'copy'}</span>
+                  </button>
+                </div>
+                <pre className="p-6 text-sm text-gray-300 overflow-x-auto font-mono">
+                  <code>{mcpIntegrationCode}</code>
+                </pre>
+              </div>
             </div>
           </div>
         </div>
@@ -343,18 +418,17 @@ Output clean, production-ready React JSX.\`;`;
             Be among the first to experience predictable AI-generated UIs. Help us shape the future of design automation.
           </p>
           
-          <form onSubmit={handleEarlyAccess} className="max-w-md mx-auto">
+          <div className="max-w-md mx-auto">
             <div className="flex flex-col sm:flex-row gap-4">
               <input 
                 placeholder="Enter your email address" 
                 className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white" 
-                required 
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <button 
-                type="submit" 
+                onClick={handleEarlyAccess}
                 disabled={isSubmitting}
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-lg font-medium transition-colors"
               >
@@ -370,7 +444,7 @@ Output clean, production-ready React JSX.\`;`;
             {submitStatus === 'error' && (
               <p className="text-red-400 text-sm mt-2">Something went wrong. Please try again.</p>
             )}
-          </form>
+          </div>
         </div>
       </section>
 
