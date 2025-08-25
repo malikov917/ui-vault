@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code, Zap, Eye, Server, ArrowRight, Check, Copy, Terminal, Palette, Layout, Sparkles } from 'lucide-react';
+import { Code, Server, ArrowRight, Check, Copy, Terminal, Palette, Layout, Sparkles } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 const UIVaultLanding = () => {
@@ -223,7 +223,7 @@ Output clean, production-ready React JSX.\`;`;
       <section className="py-20 px-4 bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 font-mono">The Developer Frustration 😤</h2>
-          <p className="text-center text-gray-400 mb-16 font-mono text-sm">// We've all been there...</p>
+          <p className="text-center text-gray-400 mb-16 font-mono text-sm"><span>{'//'}</span> We've all been there...</p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6 bg-gray-900/50 rounded-xl border border-gray-800">
               <div className="w-16 h-16 bg-red-600/20 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -256,7 +256,7 @@ Output clean, production-ready React JSX.\`;`;
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 font-mono">The UIVault Solution 🛡️</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono text-sm">
-              <span className="text-emerald-400">//</span> A curated design system with live previews, optimized prompts, and MCP server integration
+              <span className="text-emerald-400">{'//'}</span> A curated design system with live previews, optimized prompts, and MCP server integration
             </p>
           </div>
 
